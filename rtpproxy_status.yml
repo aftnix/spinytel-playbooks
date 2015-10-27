@@ -1,0 +1,7 @@
+---
+  -hots: sip_proxies
+  remote_user: root
+  tasks:
+    - name: rtpproxy status
+      shell: 'ps aux | grep rtpproxy'
+  

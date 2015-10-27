@@ -1,0 +1,8 @@
+---
+- hosts: sip_proxies
+  remote_user: root
+  tasks:
+  - name: The total number of calls
+    shell: '/usr/local/sbin/kamctl fifo dlg_list | /bin/grep state | /bin/grep 4 | /usr/bin/wc -l'
+    register: result
+  - debug: var=result.stdout_lines
